@@ -546,7 +546,7 @@ nav .navlinks li a:hover {
     display: block;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 490px) {
   /* Section Portfolio  */
   .column-portefolio {
     display: block;
