@@ -24,3 +24,30 @@ var typed = new Typed(".input", {
   loopCount: Infinity,
   loop: true,
 });
+
+// EmailJs
+function sendmail() {
+  var params = {
+    firstname: document.getElementById("firstname").value,
+    lastname: document.getElementById("lastname").value,
+    email: document.getElementById("email").value,
+    sujet: document.getElementById("sujet").value,
+    message: document.getElementById("message").value,
+  };
+
+  const serviceID = "service_2trxrnt";
+  const templateID = "template_j2qs4v8";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then((res) => {
+      document.getElementById("firstname").value = "";
+      document.getElementById("lastname").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("sujet").value = "";
+      document.getElementById("message").value = "";
+      console.log(res);
+      alert("Votre message a bien été envoyer !");
+    })
+    .catch((err) => console.log(err));
+}
